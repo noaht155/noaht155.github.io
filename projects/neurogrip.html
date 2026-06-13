@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>NeuroGrip | Noah Thomas, Mechanical Engineer</title>
+  <meta name="description" content="NeuroGrip: an EMG-controlled, tendon-driven 3D printed robotic hand. Zero unexpected actuations across 30 validation trials. Built by Noah Thomas.">
+  <meta property="og:title" content="NeuroGrip | Noah Thomas">
+  <meta property="og:description" content="EMG-controlled, tendon-driven 3D printed robotic hand. 0/30 misclassifications in validation.">
+  <meta property="og:image" content="https://noaht155.github.io/assets/neurogrip/hero.jpg">
+  <meta property="og:type" content="article">
+  <link rel="icon" type="image/svg+xml" href="../assets/favicon.svg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500&family=JetBrains+Mono:wght@400;700&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <header class="nav">
+    <div class="container nav-inner">
+      <a class="nav-wordmark" href="../index.html" aria-label="Noah Thomas, home">NT</a>
+      <button class="nav-toggle" aria-expanded="false" aria-controls="nav-links" aria-label="Toggle navigation menu">
+        <span class="nav-toggle-bar"></span>
+        <span class="nav-toggle-bar"></span>
+        <span class="nav-toggle-bar"></span>
+      </button>
+      <nav id="nav-links" class="nav-links" aria-label="Main navigation">
+        <a href="../index.html#projects">Projects</a>
+        <a href="../index.html#experience">Experience</a>
+        <a href="../index.html#skills">Skills</a>
+        <a href="../index.html#contact">Contact</a>
+        <a class="btn btn-secondary" href="../assets/Noah_Thomas_Resume.pdf">Resume</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+
+    <div class="container detail-header">
+      <p class="section-label">// <a href="../index.html#projects">PROJECTS</a> / NEUROGRIP</p>
+      <h1>NeuroGrip</h1>
+      <p class="detail-oneliner">EMG-controlled, tendon-driven 3D printed robotic hand.</p>
+      <div class="tag-row">
+        <span class="tag">SolidWorks</span>
+        <span class="tag">C++</span>
+        <span class="tag">Arduino</span>
+        <span class="tag">EMG</span>
+        <span class="tag">DFM</span>
+        <span class="tag">Bambu P1S</span>
+      </div>
+
+      <div class="metric-row" style="--metric-cols: 3;">
+        <div class="metric">
+          <div class="metric-value">0/30</div>
+          <div class="metric-caption">misclassifications in validation</div>
+        </div>
+        <div class="metric">
+          <div class="metric-value">5x</div>
+          <div class="metric-caption">MG90D servos driving dual tendons</div>
+        </div>
+        <div class="metric">
+          <div class="metric-value">6</div>
+          <div class="metric-caption">weeks from concept to prototype</div>
+        </div>
+      </div>
+
+      <img class="detail-hero-image" src="../assets/neurogrip/hero.jpg" alt="NeuroGrip robotic hand prototype with tendon-driven 3D printed fingers" width="1600" height="900">
+    </div>
+
+    <section class="container detail-section section reveal" style="padding-top: 0;">
+      <p class="section-label">// GOALS</p>
+      <h2>Goals</h2>
+      <p>Model and fabricate a 3D printed hand with individual finger movement, controlled non-invasively via surface EMG, proving feasibility of low-cost neurological prosthetic control.</p>
+    </section>
+
+    <section class="container detail-section section reveal">
+      <p class="section-label">// METHODS</p>
+      <h2>Methods</h2>
+      <p>SolidWorks design with DFM principles: press-fit filament joints, zero hardware fasteners. Dual tendon nylon wire actuation driven by 5x MG90D servos through a PWM driver.</p>
+      <p>An Arduino UNO runs a C++ real-time noise-rejection and threshold-based grip classification algorithm on the EMG signal.</p>
+    </section>
+
+    <section class="container detail-section section reveal">
+      <p class="section-label">// RESULTS</p>
+      <h2>Results</h2>
+      <p>Zero unexpected actuations across 30 validation trials. Dual tendon routing maximizes grip force. Functional prototype from concept in six weeks.</p>
+    </section>
+
+    <section class="container section reveal">
+      <div class="gallery">
+        <figure>
+          <img src="../assets/neurogrip/cad.jpg" alt="SolidWorks CAD render of the NeuroGrip hand assembly" width="1200" height="900" loading="lazy">
+          <figcaption>SolidWorks assembly: press-fit filament joints, no fasteners.</figcaption>
+        </figure>
+        <figure>
+          <img src="../assets/neurogrip/assembly.jpg" alt="NeuroGrip during assembly showing tendon routing and servo bank" width="1200" height="900" loading="lazy">
+          <figcaption>Dual tendon routing through the 5x MG90D servo bank.</figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <section class="container section reveal">
+      <a class="next-project" href="./stridesync.html">
+        <p class="next-project-label">Next project &rarr;</p>
+        <h3>StrideSync</h3>
+        <p>Bilateral wearable gait analysis system for distance runners.</p>
+      </a>
+    </section>
+
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <p>Noah Thomas &middot; Built with plain HTML/CSS and stubbornness &middot; 2026</p>
+    </div>
+  </footer>
+
+  <script src="../js/main.js"></script>
+</body>
+</html>

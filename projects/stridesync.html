@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>StrideSync | Noah Thomas, Mechanical Engineer</title>
+  <meta name="description" content="StrideSync: a bilateral wearable gait analysis system for distance runners. Six sensor nodes, two ESP32 modules, Mahony filtering, and a Python dashboard. Built by Noah Thomas.">
+  <meta property="og:title" content="StrideSync | Noah Thomas">
+  <meta property="og:description" content="Bilateral wearable gait analysis system for distance runners. 6 sensor nodes, 2x ESP32.">
+  <meta property="og:image" content="https://noaht155.github.io/assets/stridesync/architecture.png">
+  <meta property="og:type" content="article">
+  <link rel="icon" type="image/svg+xml" href="../assets/favicon.svg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500&family=JetBrains+Mono:wght@400;700&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <header class="nav">
+    <div class="container nav-inner">
+      <a class="nav-wordmark" href="../index.html" aria-label="Noah Thomas, home">NT</a>
+      <button class="nav-toggle" aria-expanded="false" aria-controls="nav-links" aria-label="Toggle navigation menu">
+        <span class="nav-toggle-bar"></span>
+        <span class="nav-toggle-bar"></span>
+        <span class="nav-toggle-bar"></span>
+      </button>
+      <nav id="nav-links" class="nav-links" aria-label="Main navigation">
+        <a href="../index.html#projects">Projects</a>
+        <a href="../index.html#experience">Experience</a>
+        <a href="../index.html#skills">Skills</a>
+        <a href="../index.html#contact">Contact</a>
+        <a class="btn btn-secondary" href="../assets/Noah_Thomas_Resume.pdf">Resume</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+
+    <div class="container detail-header">
+      <p class="section-label">// <a href="../index.html#projects">PROJECTS</a> / STRIDESYNC</p>
+      <p class="badge">In active development</p>
+      <h1>StrideSync</h1>
+      <p class="detail-oneliner">Bilateral wearable gait analysis system for distance runners.</p>
+      <div class="tag-row">
+        <span class="tag">ESP32</span>
+        <span class="tag">C++</span>
+        <span class="tag">I2C</span>
+        <span class="tag">Mahony filter</span>
+        <span class="tag">Python</span>
+        <span class="tag">Plotly Dash</span>
+        <span class="tag">SolidWorks</span>
+      </div>
+
+      <div class="metric-row" style="--metric-cols: 3;">
+        <div class="metric">
+          <div class="metric-value">6</div>
+          <div class="metric-caption">sensor nodes per runner</div>
+        </div>
+        <div class="metric">
+          <div class="metric-value">2x</div>
+          <div class="metric-caption">ESP32 modules, one per leg</div>
+        </div>
+        <div class="metric">
+          <div class="metric-value">6</div>
+          <div class="metric-caption">gait metrics measured</div>
+        </div>
+      </div>
+
+      <img class="detail-hero-image" src="../assets/stridesync/architecture.png" alt="StrideSync system architecture diagram: bilateral IMU and FSR sensor nodes feeding two ESP32 modules and a Python pipeline" width="1600" height="900">
+    </div>
+
+    <section class="container detail-section section reveal" style="padding-top: 0;">
+      <p class="section-label">// GOALS</p>
+      <h2>Goals</h2>
+      <p>Low-cost wearable gait analysis measuring cadence, ground contact time, flight time, left/right symmetry, knee flexion, and trunk lean, with a post-run dashboard and 3D simulation.</p>
+    </section>
+
+    <section class="container detail-section section reveal">
+      <p class="section-label">// METHODS</p>
+      <h2>Methods</h2>
+      <p>Two ESP32 modules (one per leg), MPU-6050 IMUs at thigh, shank, and foot plus FSR footstrike sensors, managed over I2C through a TCA9548A multiplexer. Mahony filter for real-time orientation estimation.</p>
+      <p>WiFi/Bluetooth offload to a Python pipeline: Pandas processing, a Plotly Dash dashboard, and PyOpenGL visualization. Custom SolidWorks housings.</p>
+    </section>
+
+    <section class="container detail-section section reveal">
+      <p class="section-label">// STATUS</p>
+      <h2>Status</h2>
+      <p>IMU acquisition and Mahony filtering verified. Hardware is moving from breadboard to soldered permanent modules. Validation against Garmin ground truth is in progress.</p>
+    </section>
+
+    <section class="container section reveal">
+      <div class="gallery">
+        <figure>
+          <img src="../assets/stridesync/breadboard.jpg" alt="StrideSync breadboard prototype with ESP32, IMUs, and multiplexer wiring" width="1200" height="900" loading="lazy">
+          <figcaption>Breadboard prototype: ESP32, MPU-6050 IMUs, TCA9548A multiplexer.</figcaption>
+        </figure>
+        <figure>
+          <img src="../assets/stridesync/dashboard.png" alt="Plotly Dash post-run dashboard showing gait metrics" width="1200" height="900" loading="lazy">
+          <figcaption>Post-run Plotly Dash dashboard built on the Python pipeline.</figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <section class="container section reveal">
+      <a class="next-project" href="./inspire.html">
+        <p class="next-project-label">Next project &rarr;</p>
+        <h3>Project Inspire (Mondelez)</h3>
+        <p>Facility project from AutoCAD layout to construction in 2 months.</p>
+      </a>
+    </section>
+
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <p>Noah Thomas &middot; Built with plain HTML/CSS and stubbornness &middot; 2026</p>
+    </div>
+  </footer>
+
+  <script src="../js/main.js"></script>
+</body>
+</html>

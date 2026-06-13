@@ -1,0 +1,114 @@
+# 02 — Content (single source of truth)
+
+All copy below is final unless marked TODO. Do not invent metrics or claims
+not listed here. No em dashes anywhere on the site.
+
+## Identity
+- Name: **Noah Thomas**
+- Tagline (hero h1): **Mechanical engineer building hardware at the
+  intersection of humans and machines.**
+- Hero subline: Second-year Mechanical Engineering student at the University
+  of Waterloo, Option in Biomechanics. I build neural interface hardware and
+  wearable sensing systems, and I am looking for a Fall 2026 co-op in
+  surgical robotics, humanoid robotics, or medtech.
+- Email: nethomas@uwaterloo.ca
+- LinkedIn: https://linkedin.com/in/noah-thomas-7a13892a9
+- GitHub: https://github.com/noaht155
+- Notion portfolio (do not link prominently; site replaces it): noah-thomas.notion.site
+- Resume: link to `/assets/Noah_Thomas_Resume.pdf` (owner will drop file in)
+
+## Hero metrics strip (3 items, JetBrains Mono)
+- `2` co-op terms completed
+- `0/30` misclassifications (NeuroGrip validation)
+- `$110K` annual savings delivered (Mondelez)
+
+---
+
+## PROJECT 1 — NeuroGrip
+- One-liner: EMG-controlled, tendon-driven 3D printed robotic hand.
+- Card metrics: `0/30 misclassifications` · `5x MG90D servos`
+- Tech tags: SolidWorks, C++, Arduino, EMG, DFM, Bambu P1S
+- Detail page sections (Goals / Methods / Results format):
+  - **Goals:** Model and fabricate a 3D printed hand with individual finger
+    movement, controlled non-invasively via surface EMG, proving feasibility
+    of low-cost neurological prosthetic control.
+  - **Methods:** SolidWorks design with DFM principles: press-fit filament
+    joints, zero hardware fasteners. Dual tendon nylon wire actuation driven
+    by 5x MG90D servos through a PWM driver. Arduino UNO running a C++
+    real-time noise-rejection and threshold-based grip classification
+    algorithm on the EMG signal.
+  - **Results:** Zero unexpected actuations across 30 validation trials.
+    Dual tendon routing maximizes grip force. Functional prototype from
+    concept in six weeks.
+- Images: pull from owner's PDF portfolio (hand photos, CAD renders).
+  Placeholder paths: `/assets/neurogrip/hero.jpg`, `/assets/neurogrip/cad.jpg`,
+  `/assets/neurogrip/assembly.jpg`
+
+## PROJECT 2 — StrideSync
+- One-liner: Bilateral wearable gait analysis system for distance runners.
+- Card metrics: `6 sensor nodes` · `2x ESP32`
+- Tech tags: ESP32, C++, I2C, Mahony filter, Python, Plotly Dash, SolidWorks
+- Detail page sections:
+  - **Goals:** Low-cost wearable gait analysis measuring cadence, ground
+    contact time, flight time, left/right symmetry, knee flexion, and trunk
+    lean, with a post-run dashboard and 3D simulation.
+  - **Methods:** Two ESP32 modules (one per leg), MPU-6050 IMUs at thigh,
+    shank, and foot plus FSR footstrike sensors, managed over I2C through a
+    TCA9548A multiplexer. Mahony filter for real-time orientation estimation.
+    WiFi/Bluetooth offload to a Python pipeline: Pandas processing, Plotly
+    Dash dashboard, PyOpenGL visualization. Custom SolidWorks housings.
+  - **Status:** IMU acquisition and Mahony filtering verified; hardware moving
+    from breadboard to soldered permanent modules. Validation against Garmin
+    ground truth in progress. *(Keep honest: label as "In active development".)*
+- Images: system architecture diagram, workflow diagram, breadboard photo from
+  PDF portfolio. Paths: `/assets/stridesync/architecture.png`,
+  `/assets/stridesync/breadboard.jpg`, `/assets/stridesync/dashboard.png`
+
+## PROJECT 3 — Project Inspire (Mondelez)
+- One-liner: Facility project from AutoCAD layout to construction in 2 months.
+- Card metrics: `+20% capacity` · `2 months to install`
+- Tech tags: AutoCAD, Stakeholder management, Contractor coordination
+- Detail page sections:
+  - **Goals:** Take an under-scoped facility improvement from ideation to
+    implementation inside a single co-op term under live manufacturing
+    constraints.
+  - **Methods:** AutoCAD layout design, contractor coordination, and
+    cross-functional stakeholder management across engineering, operations,
+    and facilities.
+  - **Results:** +20% locker capacity, +80% employee satisfaction, 40%
+    reduction in install time versus initial contractor plan.
+- Images: `/assets/inspire/layout.png` (TODO owner provides from PDF)
+
+---
+
+## EXPERIENCE (timeline, newest first)
+1. **Engineering Co-op — Mondelez International**, Hamilton ON,
+   Jan 2026 - May 2026
+   - Led a $350,000 process improvement project delivering $110,000 in
+     annual cost savings
+   - Prepared CFD geometry in Autodesk Inventor for a $1,000,000 oven
+     upgrade focused on explosion risk prevention
+   - Drove a facility project from ideation to implementation in 2 months:
+     +20% capacity, +80% satisfaction
+2. **Assistant QA Inspector — S&C Electric Canada Ltd**, May 2025 - Aug 2025
+   - Identified defects on high-voltage switches using GD&T
+   - Supported ISO 9001 retention through metrology and calibration
+   - Eliminated 20 hours of bimonthly downtime via production inspections
+
+## SKILLS (grouped, render as tag grids)
+- **CAD / Manufacturing:** SolidWorks, Autodesk Inventor, AutoCAD,
+  Bambu Studio, DFM, GD&T, 3D printing
+- **Code:** C, C++, Python, MATLAB + Simulink, Simscape Multibody
+- **Embedded / Hardware:** ESP32, Arduino, I2C, PWM, EMG, IMU sensor fusion,
+  soldering (fine pitch)
+- **Tools:** Git/GitHub, VS Code, PlatformIO, Docker
+
+## CONTACT section
+- Heading: **Let's build something.**
+- Line: Looking for Fall 2026 co-op roles in surgical robotics, humanoid
+  robotics, and medtech wearables. Open to Waterloo, Toronto, Boston, and
+  the Bay Area.
+- Buttons: Email me (primary, mailto), LinkedIn (secondary), Resume (secondary)
+
+## Footer
+- "Noah Thomas · Built with plain HTML/CSS and stubbornness · 2026"

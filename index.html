@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Noah Thomas | Mechanical Engineer</title>
+  <meta name="description" content="Noah Thomas, mechanical engineering student at the University of Waterloo. I build neural interface hardware and wearable sensing systems. Looking for a Fall 2026 co-op in surgical robotics, humanoid robotics, or medtech.">
+  <meta property="og:title" content="Noah Thomas | Mechanical Engineer">
+  <meta property="og:description" content="Mechanical engineer building hardware at the intersection of humans and machines. Neural interface and wearable sensing projects.">
+  <meta property="og:image" content="https://noaht155.github.io/assets/neurogrip/hero.jpg">
+  <meta property="og:type" content="website">
+  <link rel="icon" type="image/svg+xml" href="./assets/favicon.svg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500&family=JetBrains+Mono:wght@400;700&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./css/style.css">
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <header class="nav">
+    <div class="container nav-inner">
+      <a class="nav-wordmark" href="./index.html" aria-label="Noah Thomas, home">NT</a>
+      <button class="nav-toggle" aria-expanded="false" aria-controls="nav-links" aria-label="Toggle navigation menu">
+        <span class="nav-toggle-bar"></span>
+        <span class="nav-toggle-bar"></span>
+        <span class="nav-toggle-bar"></span>
+      </button>
+      <nav id="nav-links" class="nav-links" aria-label="Main navigation">
+        <a href="#projects">Projects</a>
+        <a href="#experience">Experience</a>
+        <a href="#skills">Skills</a>
+        <a href="#contact">Contact</a>
+        <a class="btn btn-secondary" href="./assets/Noah_Thomas_Resume.pdf">Resume</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+
+    <!-- ============ Hero ============ -->
+    <section class="hero">
+      <div class="container hero-inner">
+        <p class="section-label">// MECHANICAL ENGINEER</p>
+        <h1>Mechanical engineer building hardware at the intersection of humans and machines.</h1>
+        <p class="hero-subline">Second-year Mechanical Engineering student at the University of Waterloo, Option in Biomechanics. I build neural interface hardware and wearable sensing systems, and I am looking for a Fall 2026 co-op in surgical robotics, humanoid robotics, or medtech.</p>
+        <div class="hero-actions">
+          <a class="btn btn-primary" href="#projects">View projects</a>
+          <a class="btn btn-secondary" href="./assets/Noah_Thomas_Resume.pdf">Resume</a>
+        </div>
+        <div class="hero-metrics">
+          <div class="metric">
+            <div class="metric-value">2</div>
+            <div class="metric-caption">co-op terms completed</div>
+          </div>
+          <div class="metric">
+            <div class="metric-value">0/30</div>
+            <div class="metric-caption">misclassifications (NeuroGrip validation)</div>
+          </div>
+          <div class="metric">
+            <div class="metric-value">$110K</div>
+            <div class="metric-caption">annual savings delivered (Mondelez)</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ Projects ============ -->
+    <section id="projects" class="section reveal">
+      <div class="container">
+        <p class="section-label">// PROJECTS</p>
+        <h2>Things I've built</h2>
+        <div class="project-grid">
+
+          <a class="project-card" href="./projects/neurogrip.html">
+            <img class="project-card-image" src="./assets/neurogrip/hero.jpg" alt="NeuroGrip, a 3D printed robotic hand with tendon-driven fingers" width="1600" height="900" loading="lazy">
+            <div class="project-card-body">
+              <h3>NeuroGrip</h3>
+              <p class="project-card-desc">EMG-controlled, tendon-driven 3D printed robotic hand.</p>
+              <div class="tag-row">
+                <span class="tag">SolidWorks</span>
+                <span class="tag">C++</span>
+                <span class="tag">Arduino</span>
+                <span class="tag">EMG</span>
+                <span class="tag">DFM</span>
+                <span class="tag">Bambu P1S</span>
+              </div>
+              <p class="project-card-metrics">0/30 misclassifications &middot; 5x MG90D servos</p>
+            </div>
+          </a>
+
+          <a class="project-card" href="./projects/stridesync.html">
+            <img class="project-card-image" src="./assets/stridesync/architecture.png" alt="StrideSync system architecture diagram showing bilateral sensor nodes" width="1600" height="900" loading="lazy">
+            <div class="project-card-body">
+              <h3>StrideSync</h3>
+              <p class="project-card-desc">Bilateral wearable gait analysis system for distance runners.</p>
+              <div class="tag-row">
+                <span class="tag">ESP32</span>
+                <span class="tag">C++</span>
+                <span class="tag">I2C</span>
+                <span class="tag">Mahony filter</span>
+                <span class="tag">Python</span>
+                <span class="tag">Plotly Dash</span>
+                <span class="tag">SolidWorks</span>
+              </div>
+              <p class="project-card-metrics">6 sensor nodes &middot; 2x ESP32</p>
+            </div>
+          </a>
+
+          <a class="project-card project-card-wide" href="./projects/inspire.html">
+            <img class="project-card-image" src="./assets/inspire/layout.png" alt="AutoCAD facility layout for Project Inspire at Mondelez" width="1600" height="457" loading="lazy">
+            <div class="project-card-body">
+              <h3>Project Inspire (Mondelez)</h3>
+              <p class="project-card-desc">Facility project from AutoCAD layout to construction in 2 months.</p>
+              <div class="tag-row">
+                <span class="tag">AutoCAD</span>
+                <span class="tag">Stakeholder management</span>
+                <span class="tag">Contractor coordination</span>
+              </div>
+              <p class="project-card-metrics">+20% capacity &middot; 2 months to install</p>
+            </div>
+          </a>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ Experience ============ -->
+    <section id="experience" class="section reveal">
+      <div class="container">
+        <p class="section-label">// EXPERIENCE</p>
+        <h2>Where I've worked</h2>
+        <div class="timeline">
+
+          <div class="timeline-entry">
+            <div class="timeline-date">Jan 2026 - May 2026</div>
+            <div class="timeline-body">
+              <h3>Engineering Co-op</h3>
+              <p class="timeline-company">Mondelez International, Hamilton ON</p>
+              <ul>
+                <li>Led a $350,000 process improvement project delivering $110,000 in annual cost savings</li>
+                <li>Prepared CFD geometry in Autodesk Inventor for a $1,000,000 oven upgrade focused on explosion risk prevention</li>
+                <li>Drove a facility project from ideation to implementation in 2 months: +20% capacity, +80% satisfaction</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="timeline-entry">
+            <div class="timeline-date">May 2025 - Aug 2025</div>
+            <div class="timeline-body">
+              <h3>Assistant QA Inspector</h3>
+              <p class="timeline-company">S&amp;C Electric Canada Ltd</p>
+              <ul>
+                <li>Identified defects on high-voltage switches using GD&amp;T</li>
+                <li>Supported ISO 9001 retention through metrology and calibration</li>
+                <li>Eliminated 20 hours of bimonthly downtime via production inspections</li>
+              </ul>
+            </div>
+          </div>
+
+        </div>
+        <p class="education-line">University of Waterloo, BASc Mechanical Engineering, Option in Biomechanics, 2024-2029. GPA 3.7.</p>
+      </div>
+    </section>
+
+    <!-- ============ Skills ============ -->
+    <section id="skills" class="section reveal">
+      <div class="container">
+        <p class="section-label">// TOOLKIT</p>
+        <h2>What I work with</h2>
+        <div class="skills-grid">
+
+          <div class="skills-group">
+            <h3>CAD / Manufacturing</h3>
+            <div class="tag-row">
+              <span class="tag">SolidWorks</span>
+              <span class="tag">Autodesk Inventor</span>
+              <span class="tag">AutoCAD</span>
+              <span class="tag">Bambu Studio</span>
+              <span class="tag">DFM</span>
+              <span class="tag">GD&amp;T</span>
+              <span class="tag">3D printing</span>
+            </div>
+          </div>
+
+          <div class="skills-group">
+            <h3>Code</h3>
+            <div class="tag-row">
+              <span class="tag">C</span>
+              <span class="tag">C++</span>
+              <span class="tag">Python</span>
+              <span class="tag">MATLAB + Simulink</span>
+              <span class="tag">Simscape Multibody</span>
+            </div>
+          </div>
+
+          <div class="skills-group">
+            <h3>Embedded / Hardware</h3>
+            <div class="tag-row">
+              <span class="tag">ESP32</span>
+              <span class="tag">Arduino</span>
+              <span class="tag">I2C</span>
+              <span class="tag">PWM</span>
+              <span class="tag">EMG</span>
+              <span class="tag">IMU sensor fusion</span>
+              <span class="tag">Soldering (fine pitch)</span>
+            </div>
+          </div>
+
+          <div class="skills-group">
+            <h3>Tools</h3>
+            <div class="tag-row">
+              <span class="tag">Git/GitHub</span>
+              <span class="tag">VS Code</span>
+              <span class="tag">PlatformIO</span>
+              <span class="tag">Docker</span>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ Contact ============ -->
+    <section id="contact" class="section contact reveal">
+      <div class="container">
+        <p class="section-label">// CONTACT</p>
+        <h2>Let's build something.</h2>
+        <p>Looking for Fall 2026 co-op roles in surgical robotics, humanoid robotics, and medtech wearables. Open to Waterloo, Toronto, Boston, and the Bay Area.</p>
+        <div class="contact-actions">
+          <a class="btn btn-primary" href="mailto:nethomas@uwaterloo.ca">Email me</a>
+          <a class="btn btn-secondary" href="https://linkedin.com/in/noah-thomas-7a13892a9">LinkedIn</a>
+          <a class="btn btn-secondary" href="./assets/Noah_Thomas_Resume.pdf">Resume</a>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <p>Noah Thomas &middot; Built with plain HTML/CSS and stubbornness &middot; 2026</p>
+    </div>
+  </footer>
+
+  <script src="./js/main.js"></script>
+</body>
+</html>
