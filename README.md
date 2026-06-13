@@ -29,6 +29,8 @@ claude_context/         Build specs (not served as part of the site)
 
 ## Images you still need to add
 
+Labeled dark "PLACEHOLDER" images currently sit at all seven paths so the site previews cleanly. **Replace them before launch** (each one says so on its face). Note: the placeholder files at `.jpg` paths are actually PNG data, which browsers render fine, but your real exports should be genuine JPEGs.
+
 Extract from your PDF portfolio, export max 1600px wide, JPEG quality ~80 (or WebP), target under 250 KB each. Use exactly these paths:
 
 - `assets/neurogrip/hero.jpg` — hand photo (also used as the link preview image)

@@ -3,6 +3,33 @@
 Revision history for the site build. Newest first. Each revision states what
 changed and any deviations from the spec files (00-04) so they stay auditable.
 
+## Revision 2 — 2026-06-12 — Placeholder images + favicon.ico
+
+Cause analysis of the 404s seen when serving locally: (1) the seven
+owner-provided images did not exist yet, (2) browsers probe `/favicon.ico`
+by convention even when pages declare an SVG icon, (3) the `BrokenPipeError`
+traceback from `http.server` is harmless noise: the browser closed the
+connection before the 404 body finished sending.
+
+### Added
+- Labeled placeholder images (1600x900, dark theme, "PLACEHOLDER /
+  <filename> / REPLACE WITH REAL IMAGE") at all seven spec'd asset paths,
+  ~7.5 KB each. Generated in pure Python (no PIL/ImageMagick available);
+  generator kept outside the repo as a one-off.
+- `favicon.ico` at the repo root (32x32 "NT" monogram, PNG-in-ICO) to
+  satisfy the default browser probe.
+- README note that placeholders must be replaced before launch.
+
+### Caveat
+- Placeholder files at `.jpg` paths contain PNG data. Browsers content-sniff
+  images so they render fine, but they are temporary by design; the owner's
+  real exports should be genuine JPEGs.
+
+### Verified
+- All previously-404 paths (7 images + `/favicon.ico`) now return 200 over
+  a local `python3 -m http.server`; placeholder pixels decoded and checked
+  against the design tokens.
+
 ## Revision 1 — 2026-06-12 — Initial build
 
 Built the complete v1 site from the spec files (00 through 04).
