@@ -16,7 +16,12 @@ jobs:
         with:
           fetch-depth: 0
 
+      - name: Set up SSH
+        uses: webfactory/ssh-agent@v0.9.0
+        with:
+          ssh-private-key: ${{ secrets.DEPLOY_KEY }}
+
       - name: Push to Public Repo
         run: |
-          git remote add public https://noaht155:${{ secrets.PUBLIC_REPO_TOKEN }}@github.com/noaht155/noaht155.github.io.git
+          git remote add public git@github.com:noaht155/noaht155.github.io.git
           git push public HEAD:refs/heads/main --force
