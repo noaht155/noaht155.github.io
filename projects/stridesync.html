@@ -7,7 +7,7 @@
   <meta name="description" content="StrideSync: a bilateral wearable gait analysis system for distance runners. Six sensor nodes, two ESP32 modules, Mahony filtering, and a Python dashboard. Built by Noah Thomas.">
   <meta property="og:title" content="StrideSync | Noah Thomas">
   <meta property="og:description" content="Bilateral wearable gait analysis system for distance runners. 6 sensor nodes, 2x ESP32.">
-  <meta property="og:image" content="https://noaht155.github.io/assets/stridesync/architecture.png">
+  <meta property="og:image" content="https://noaht155.github.io/assets/stridesync/stridesync-dash-3d.png">
   <meta property="og:type" content="article">
   <link rel="icon" type="image/svg+xml" href="../assets/favicon.svg">
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -73,23 +73,28 @@
           <button class="carousel-arrow carousel-arrow-prev" type="button" aria-label="Previous image">&larr;</button>
 
           <figure class="carousel-figure is-active">
-            <img class="carousel-image" src="../assets/stridesync/architecture.png" alt="StrideSync system architecture diagram: bilateral IMU and FSR sensor nodes feeding two ESP32 modules and a Python pipeline" width="1600" height="900" loading="eager">
-            <figcaption>System architecture: bilateral IMU and FSR sensor nodes feeding two ESP32 modules.</figcaption>
+            <img class="carousel-image" src="../assets/stridesync/stridesync-dash-3d.png" alt="3D gait skeleton simulation rendered in the StrideSync Plotly Dash dashboard" width="883" height="859" loading="eager">
+            <figcaption>3D gait simulation in web dashboard.</figcaption>
           </figure>
 
           <figure class="carousel-figure">
-            <img class="carousel-image" src="../assets/stridesync/breadboard.jpg" alt="StrideSync breadboard prototype with ESP32, IMUs, and multiplexer wiring" width="1200" height="900" loading="lazy">
-            <figcaption>Breadboard prototype: ESP32, MPU-6050 IMUs, TCA9548A multiplexer.</figcaption>
+            <img class="carousel-image" src="../assets/stridesync/stridesync-inital-imu-circuit.png" alt="Initial breadboard circuit used to validate IMU data acquisition and the Mahony filter" width="1118" height="800" loading="lazy">
+            <figcaption>Initial circuit used for IMU and Mahony filter validation.</figcaption>
           </figure>
 
           <figure class="carousel-figure">
-            <img class="carousel-image" src="../assets/stridesync/dashboard.png" alt="Plotly Dash post-run dashboard showing gait metrics" width="1200" height="900" loading="lazy">
-            <figcaption>Post-run Plotly Dash dashboard built on the Python pipeline.</figcaption>
+            <img class="carousel-image" src="../assets/stridesync/stridesync-single-leg-architecture.png" alt="Diagram of the single-leg sensor data and power architecture" width="1101" height="829" loading="lazy">
+            <figcaption>Single leg data and power architecture.</figcaption>
+          </figure>
+
+          <figure class="carousel-figure">
+            <img class="carousel-image" src="../assets/stridesync/stridesync-final-design-workflow.png" alt="Flowchart of the final StrideSync system design workflow for gait analysis" width="266" height="458" loading="lazy">
+            <figcaption>Final system design workflow for gait analysis.</figcaption>
           </figure>
 
           <button class="carousel-arrow carousel-arrow-next" type="button" aria-label="Next image">&rarr;</button>
         </div>
-        <p class="carousel-counter">1 / 3</p>
+        <p class="carousel-counter">1 / 4</p>
       </div>
     </div>
 

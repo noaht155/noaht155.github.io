@@ -3,6 +3,39 @@
 Revision history for the site build. Newest first. Each revision states what
 changed and any deviations from the spec files (00-04) so they stay auditable.
 
+## Revision 7 — 2026-06-17 — Wire up real assets, add Portfolio PDF link
+
+Owner provided the real resume PDF, a new portfolio PDF, and real project
+photos/diagrams (replacing all placeholder images), with the carousel order
+for each project specified in `claude_context/portfolio_context.md`.
+
+### Added
+- Contact section in `index.html` now has a "Portfolio PDF" button next to
+  Resume, linking to `assets/Noah_Thomas_Portfolio.pdf`.
+
+### Changed
+- `projects/neurogrip.html` — carousel figures now point at the real
+  `neurogrip-validation-test.png`, `neurogrip-circuit-wiring.png`,
+  `neurogrip-cad.png` (in that order), with real `width`/`height` and
+  matching `og:image`.
+- `projects/stridesync.html` — carousel now has four real images
+  (`stridesync-dash-3d.png`, `stridesync-inital-imu-circuit.png`,
+  `stridesync-single-leg-architecture.png`,
+  `stridesync-final-design-workflow.png`), counter updated to `1 / 4`.
+- `index.html` — project-card thumbnails and the homepage `og:image` updated
+  to the real first-in-carousel image for each project.
+- `README.md` — replaced the "Images you still need to add" checklist (now
+  satisfied) with a short guide on adding/reordering carousel images, and
+  documented the Portfolio PDF asset.
+- `claude_context/02-CONTENT.md`, `claude_context/portfolio_context.md` —
+  image lists updated to the real filenames and carousel order; fixed a typo
+  where Portfolio pointed at the Resume filename.
+
+### Removed
+- Tracked Windows `:Zone.Identifier` marker files that came in alongside the
+  new assets (`assets/Noah_Thomas_Portfolio.pdf:Zone.Identifier` and three
+  others). Added `*:Zone.Identifier` to `.gitignore` to stop them recurring.
+
 ## Revision 6 — 2026-06-17 — Add GitHub link to the footer
 
 ### Changed
@@ -189,11 +222,7 @@ Built the complete v1 site from the spec files (00 through 04).
    to update them if the site is served under a subpath.
 
 ### Still owner-provided (not blocking, slots are wired up)
-- `assets/Noah_Thomas_Resume.pdf`
-- 7 images: `neurogrip/hero.jpg`, `neurogrip/cad.jpg`,
-  `neurogrip/assembly.jpg`, `stridesync/architecture.png`,
-  `stridesync/breadboard.jpg`, `stridesync/dashboard.png`,
-  `inspire/layout.png`
+- All previously-pending assets (resume, images) were provided in Revision 7.
 
 ### Verified
 - All pages and assets return 200 over a local `python3 -m http.server`.

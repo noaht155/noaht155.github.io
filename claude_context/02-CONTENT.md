@@ -61,9 +61,9 @@ not listed here. No em dashes anywhere on the site.
   - **Repo:** https://github.com/noaht155/project_neurogrip
   - **Skills:** SolidWorks, C++, Arduino, Electromyography, Bambu Studio,
     3MF, DFM
-- Images: pull from owner's PDF portfolio (hand photos, CAD renders).
-  Placeholder paths: `/assets/neurogrip/hero.jpg`, `/assets/neurogrip/cad.jpg`,
-  `/assets/neurogrip/assembly.jpg`
+- Images (carousel order): `/assets/neurogrip/neurogrip-validation-test.png`,
+  `/assets/neurogrip/neurogrip-circuit-wiring.png`,
+  `/assets/neurogrip/neurogrip-cad.png`
 
 ## PROJECT 2 — StrideSync
 - One-liner: Bilateral wearable gait analysis system for distance runners.
@@ -100,9 +100,10 @@ not listed here. No em dashes anywhere on the site.
   - **Repo:** https://github.com/noaht155/project_stridesync
   - **Skills:** C++, PlatformIO, GitHub, Python, ESP32, Soldering,
     SolidWorks, 3MF
-- Images: system architecture diagram, workflow diagram, breadboard photo from
-  PDF portfolio. Paths: `/assets/stridesync/architecture.png`,
-  `/assets/stridesync/breadboard.jpg`, `/assets/stridesync/dashboard.png`
+- Images (carousel order): `/assets/stridesync/stridesync-dash-3d.png`,
+  `/assets/stridesync/stridesync-inital-imu-circuit.png`,
+  `/assets/stridesync/stridesync-single-leg-architecture.png`,
+  `/assets/stridesync/stridesync-final-design-workflow.png`
 
 ---
 
