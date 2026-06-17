@@ -51,9 +51,9 @@ All three pages use the same structure:
 4. Tech tag row
 5. Metric row: 2-4 metric blocks (the quantitative highlights)
 6. Hero image (full content width, 12px radius, 1px border)
-7. Three sections: Goals / Methods / Results
-   (StrideSync uses Goals / Methods / Status, with an
-   "In active development" badge: accent border pill, JetBrains Mono)
+7. Sections: Goals / Methods / The Call That Mattered / Results / Next
+   (StrideSync uses Goals / Methods / The Call That Mattered / Status / Next,
+   with an "In active development" badge: accent border pill, JetBrains Mono)
 8. Image gallery: remaining images, 2-up grid, captions in --text-2
 9. Bottom: "Next project →" link card to the next project (cycle:
    NeuroGrip → StrideSync → Inspire → NeuroGrip)

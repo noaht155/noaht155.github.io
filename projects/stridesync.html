@@ -55,8 +55,8 @@
 
       <div class="metric-row" style="--metric-cols: 3;">
         <div class="metric">
-          <div class="metric-value">6</div>
-          <div class="metric-caption">sensor nodes per runner</div>
+          <div class="metric-value">8</div>
+          <div class="metric-caption">IMUs + FSRs per runner</div>
         </div>
         <div class="metric">
           <div class="metric-value">2x</div>
@@ -80,14 +80,27 @@
     <section class="container detail-section section reveal">
       <p class="section-label">// METHODS</p>
       <h2>Methods</h2>
-      <p>Two ESP32 modules (one per leg), MPU-6050 IMUs at thigh, shank, and foot plus FSR footstrike sensors, managed over I2C through a TCA9548A multiplexer. Mahony filter for real-time orientation estimation.</p>
-      <p>WiFi/Bluetooth offload to a Python pipeline: Pandas processing, a Plotly Dash dashboard, and PyOpenGL visualization. Custom SolidWorks housings.</p>
+      <p>Two ESP32 modules (one per leg) run the architecture, developed in PlatformIO with GitHub for version control. Six MPU-6050 IMUs (thigh, shank, and foot per leg) sit on an I2C bus through a TCA9548A multiplexer and are fused with a Mahony filter, alongside FSR sensors along each leg to track joint angle and foot contact.</p>
+      <p>A Python dashboard built on Plotly, Pandas, NumPy, and Matplotlib visualizes the run data and 3D gait simulation after each run. Custom SolidWorks housings hold the hardware on the leg.</p>
+    </section>
+
+    <section class="container detail-section section reveal">
+      <p class="section-label">// THE CALL THAT MATTERED</p>
+      <h2>The call that mattered</h2>
+      <p>The key call was choosing a Mahony filter for orientation instead of raw gyro integration or a full Kalman filter. Cheap MPU-6050s drift badly: integrating gyro rate compounds error over time, while a full Kalman filter is heavy to tune and would not leave headroom on an ESP32 already juggling multiple IMUs over a multiplexed bus in real time.</p>
+      <p>Mahony sits between the two. It uses the accelerometer's gravity vector as an absolute reference to correct the gyro, and its integral term continuously estimates and removes gyro bias, which is what actually kills the drift. The result is stable orientation at a fraction of a Kalman filter's compute cost, which is what makes real-time multi-IMU capture feasible on this hardware.</p>
     </section>
 
     <section class="container detail-section section reveal">
       <p class="section-label">// STATUS</p>
       <h2>Status</h2>
-      <p>IMU acquisition and Mahony filtering verified. Hardware is moving from breadboard to soldered permanent modules. Validation against Garmin ground truth is in progress.</p>
+      <p>The test circuit initializing the MPU-6050s is verified, and the calibration protocol and Mahony filter are implemented and working. The dashboard is complete: key metric graphs, a 3D gait simulation, running data string outputs, and Garmin FIT file comparison, all verified against a generated test run file. Hardware is moving next from breadboard to soldered perfboard modules.</p>
+    </section>
+
+    <section class="container detail-section section reveal">
+      <p class="section-label">// NEXT</p>
+      <h2>Next</h2>
+      <p>Fabricate perfboard circuits and enclosures. Design the device mounting mechanism and complete a real test run.</p>
     </section>
 
     <section class="container section reveal">

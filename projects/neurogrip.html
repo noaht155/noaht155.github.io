@@ -58,7 +58,7 @@
         </div>
         <div class="metric">
           <div class="metric-value">5x</div>
-          <div class="metric-caption">MG90D servos driving dual tendons</div>
+          <div class="metric-caption">continuous-rotation MG90D servos</div>
         </div>
         <div class="metric">
           <div class="metric-value">6</div>
@@ -78,14 +78,28 @@
     <section class="container detail-section section reveal">
       <p class="section-label">// METHODS</p>
       <h2>Methods</h2>
-      <p>SolidWorks design with DFM principles: press-fit filament joints, zero hardware fasteners. Dual tendon nylon wire actuation driven by 5x MG90D servos through a PWM driver.</p>
-      <p>An Arduino UNO runs a C++ real-time noise-rejection and threshold-based grip classification algorithm on the EMG signal.</p>
+      <p>SolidWorks design with DFM principles: press-fit filament joints, zero hardware fasteners. Each finger is driven by one continuous-rotation MG90D servo through an antagonistic dual nylon tendon drive, so one rotation direction flexes the finger and the other extends it, with zero return springs. Servos are powered and commanded through a PWM driver board.</p>
+      <p>An EMG module detects muscular voltage and passes it through a noise-rejection algorithm running on an Arduino UNO R3. A rolling average paired with a threshold value determines whether the muscle is contracted or relaxed, and the classification output drives the PWM board.</p>
+    </section>
+
+    <section class="container detail-section section reveal">
+      <p class="section-label">// THE CALL THAT MATTERED</p>
+      <h2>The call that mattered</h2>
+      <p>Two calls kept this hand inside its low-cost requirement: the noise-rejection algorithm, and the switch to continuous-rotation servos.</p>
+      <p>Clinical myoelectric sensors are expensive because muscular voltage is so small that the sensor needs to separate real signal from noise. The cheap sensors used here have a high sampling rate but no built-in filtering, so a rolling average paired with a threshold value determines whether the muscle is contracted or relaxed.</p>
+      <p>Standard positional servos cap at 180 to 270 degrees, so fully flexing a finger would need a spool large enough to break the compact forearm form factor. Continuous-rotation servos pull an arbitrary tendon length in a small package, and each finger drives to stall against the object it grips, so the fingers conform independently to irregular shapes. The servo then switches off and holds through tendon and gear friction, with stall current under 3A for less than half a second.</p>
     </section>
 
     <section class="container detail-section section reveal">
       <p class="section-label">// RESULTS</p>
       <h2>Results</h2>
-      <p>Zero unexpected actuations across 30 validation trials. Dual tendon routing maximizes grip force. Functional prototype from concept in six weeks.</p>
+      <p>Zero misclassifications across 30 trials, with a successful trial defined as the hand clenching when the muscle contracts and releasing when it relaxes. The hand assembly went together without any hardware: every joint is press-fit with filament. The dual tendon design enhances grip capability.</p>
+    </section>
+
+    <section class="container detail-section section reveal">
+      <p class="section-label">// NEXT</p>
+      <h2>Next</h2>
+      <p>Implement wrist actuation and lateral finger actuation. Replace the Arduino UNO R3, EMG module, and PWM driver with a custom PCB so the electronics fit inside the arm enclosure. Add current sensing to prevent servo burnout under stall, or move to stepper motors.</p>
     </section>
 
     <section class="container section reveal">

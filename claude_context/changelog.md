@@ -3,6 +3,48 @@
 Revision history for the site build. Newest first. Each revision states what
 changed and any deviations from the spec files (00-04) so they stay auditable.
 
+## Revision 3 — 2026-06-17 — Project copy refresh from portfolio_context.md
+
+Owner supplied `claude_context/portfolio_context.md`, a richer source of
+project detail than 02-CONTENT had captured (servo mechanics, the EMG
+noise-rejection approach, the Mahony filter rationale, true sensor counts,
+and concrete next steps for both flagship projects). No images were touched.
+
+### Changed
+- `projects/neurogrip.html` — Methods now states the continuous-rotation
+  servo / antagonistic tendon drive mechanism and the rolling-average EMG
+  noise rejection. Added a new "The Call That Mattered" section (the two
+  calls that kept the build low-cost: noise rejection, continuous-rotation
+  servos) and a "Next" section (wrist/lateral actuation, PCB consolidation,
+  current sensing or stepper motors). Results reworded to match the source
+  doc's exact trial definition. Servo metric caption now says
+  "continuous-rotation MG90D servos".
+- `projects/stridesync.html` — Methods corrected to 6 IMUs + FSRs (not a
+  flat "6 sensor nodes": 3 IMUs per leg x 2 legs, plus FSRs). Added "The Call
+  That Mattered" (Mahony vs. raw integration vs. Kalman, with the actual
+  mechanism: gravity-vector correction + integral bias removal). Status
+  corrected to reflect what is actually verified (dashboard verified against
+  a *generated* test file, not live Garmin validation) instead of implying
+  in-progress live validation. Added a "Next" section (perfboard fabrication,
+  enclosures, mounting, real test run). Sensor metric corrected from `6` to
+  `8` (6 IMUs + 2 FSRs).
+- `index.html` — StrideSync project card metric updated from
+  "6 sensor nodes" to "8 IMUs + FSRs" to match the correction above.
+- `claude_context/02-CONTENT.md` and `03-PAGES.md` — updated as the source
+  of truth to match the new detail-page section structure (Goals / Methods /
+  The Call That Mattered / Results-or-Status / Next) and corrected metrics.
+
+### Deviations from spec
+4. **Detail pages gained two sections not in the original 03-PAGES spec**
+   ("The Call That Mattered", "Next"). The new source material was too
+   strong and too specific to compress into the existing Methods/Results
+   sections without losing the reasoning that makes these projects
+   compelling to a technical reader. 03-PAGES.md updated to match.
+
+### Not touched
+- No image or asset files were modified, per owner instruction (images to
+  be implemented separately).
+
 ## Revision 2 — 2026-06-12 — Placeholder images + favicon.ico
 
 Cause analysis of the 404s seen when serving locally: (1) the seven
