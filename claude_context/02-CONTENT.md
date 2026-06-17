@@ -136,4 +136,5 @@ not listed here. No em dashes anywhere on the site.
 - Buttons: Email me (primary, mailto), LinkedIn (secondary), Resume (secondary)
 
 ## Footer
-- "Noah Thomas · Built with plain HTML/CSS and stubbornness · 2026"
+- "Noah Thomas · Built with plain HTML/CSS and stubbornness · 2026 · GitHub"
+  (GitHub links to https://github.com/noaht155)

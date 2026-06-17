@@ -3,6 +3,14 @@
 Revision history for the site build. Newest first. Each revision states what
 changed and any deviations from the spec files (00-04) so they stay auditable.
 
+## Revision 6 — 2026-06-17 — Add GitHub link to the footer
+
+### Changed
+- `index.html`, `projects/neurogrip.html`, `projects/stridesync.html` —
+  footer line now ends with a "GitHub" link to
+  https://github.com/noaht155, alongside the existing copyright line.
+- `claude_context/02-CONTENT.md` — footer copy updated to match.
+
 ## Revision 5 — 2026-06-17 — Remove Project Inspire
 
 Owner asked to drop Project Inspire (the Mondelez facility project) from the
