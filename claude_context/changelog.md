@@ -3,6 +3,188 @@
 Revision history for the site build. Newest first. Each revision states what
 changed and any deviations from the spec files (00-04) so they stay auditable.
 
+## Revision 9 — 2026-06-17 — Add headshot to the homepage hero
+
+Owner wanted the headshot next to the hero intro/metrics, not just on the
+social card. Went through several rounds of owner feedback: (1) first crop
+was too tight on the face, (2) bottom edge needed to line up with the
+metrics row beneath the hero buttons, (3) the wider crop still clipped both
+shoulders and the border around the photo (and the social card's) wasn't
+visible, (4) even after widening, arms were still getting cut off both in
+the hero and on the social card, and the hero photo read as too small.
+
+### Added
+- `assets/headshot-hero.jpg` (1200x1528, ~125KB) — wide crop showing full
+  shoulders, hands, and watch with the excess sky/headroom trimmed,
+  cropped and lightly toned from `headshot-lean-smile.jpg` via `sharp`.
+  Re-cropped four times across this revision to get the framing right.
+
+### Changed
+- `index.html` — hero section now wraps the existing label/h1/subline/
+  actions/metrics in a `.hero-content` div, with `.hero-photo`
+  (`headshot-hero.jpg`) as a sibling.
+- `css/style.css` — `.hero-inner` is a column flex on mobile (photo stacks
+  above the intro text) and switches to `flex-direction: row-reverse` at
+  >=768px, putting the photo on the right, top-aligned with `.hero-content`
+  (`align-items: flex-start`). Photo is sized by width only (260px mobile,
+  440px desktop) with height left auto, so it always renders at its full
+  natural crop — no `object-fit: cover` cropping the sides. Border changed
+  from `1px solid var(--border)` (#232c36 against a #0a0e12 page
+  background — too low-contrast to read as an outline, especially against
+  the bright sky in the photo) to `2px solid var(--accent)` (the site's
+  teal), which reads clearly against both the dark page and the photo.
+- `assets/social-card.jpg` (Revision 8's asset) — re-cropped its embedded
+  portrait from the same `headshot-hero.jpg` source and widened its photo
+  panel (348px -> 391px) to match that source's aspect ratio so the arms
+  aren't cropped there either. Frame stroke changed from
+  `stroke-opacity="0.5" stroke-width="2"` to full-opacity `stroke-width="4"`
+  since the original was too faint to register as a border, particularly
+  once re-encoded as JPEG.
+
+### Deviations from spec
+5. **Hero photo is sized by width with `height: auto`, not a fixed
+   `aspect-ratio` or a flex-`stretch`-matched height.** Two earlier
+   attempts (a fixed 3:4 `aspect-ratio`, then `align-items: stretch` to
+   match the content column's height exactly) both relied on
+   `object-fit: cover` to fill a box narrower than the photo's natural
+   aspect ratio, which cropped the owner's shoulders/arms out of frame.
+   Owner explicitly asked to drop the height-matching trick in favor of
+   showing the photo at its original aspect ratio, even though that means
+   the photo's bottom edge no longer lines up exactly with the metrics row
+   from Revision 9's first pass.
+
+### Follow-up: elbow crop, wider display, metrics row layout
+Owner's right elbow was still clipped (the source crop's right bound sat
+right at ~92% of the original photo's width, and the elbow leaning on the
+railing extends to ~92.5%). Re-cropped `headshot-hero.jpg` once more with
+more margin on the right (and a touch on the left), and reused that same
+source for the social card. Owner also asked to widen both displays
+further and to pull the hero metrics out into their own full-width row.
+
+- `assets/headshot-hero.jpg` re-cropped again (now 1200x1428) with the
+  right bound moved out so the elbow has clearance.
+- `css/style.css` — `.hero-photo` width increased again: 260px -> 300px
+  (mobile), 440px -> 500px (desktop).
+- `assets/social-card.jpg` photo panel widened 391px -> 422px (matching
+  the re-cropped source's aspect ratio almost exactly, so it's no longer
+  cropping the elbow either).
+- `index.html` / `css/style.css` — `.hero-metrics` moved out of
+  `.hero-content` to be a direct child of the hero `.container`, as a
+  sibling after `.hero-inner` (the photo + text row), instead of being the
+  last stacked item inside the text column. It now spans the same
+  container boundaries as everything else in the hero, full width, so its
+  three metrics lay out in a single row with room to spare (previously
+  the text column had been squeezed by the wider photo, which was forcing
+  the metrics to wrap one-per-row instead of sitting side by side).
+  `margin-top: 56px` moved from `.hero-actions` (margin-bottom) to
+  `.hero-metrics` so the gap above the metrics row holds regardless of
+  whether the photo or the text column is taller.
+
+### Follow-up 2: website still cropped, metrics not centered
+Owner confirmed the social card now looked right, but the website hero
+photo was still "slightly cropped in the width" and the metrics row read
+as left-justified rather than centered.
+
+The cropping wasn't the source image this time — at the `min-width: 768px`
+breakpoint, `560px` photo + `64px` gap left very little room for
+`.hero-content` (as little as ~108px at exactly 768px viewport width,
+container padding included), enough to risk the text/buttons overflowing
+into the photo's box. Two changes:
+- `assets/headshot-hero.jpg` re-cropped a third time with extra margin on
+  both sides (now 1200x1406) — belt-and-suspenders in case it was still
+  the source.
+- `css/style.css` — the row-layout breakpoint moved from `768px` to
+  `1024px`, so the two-column layout only activates once there's
+  consistently enough width for both the photo and a readable text column;
+  below that it stays the single stacked column. `.hero-photo` widened
+  again: 300px -> 340px (mobile/tablet), 500px -> 560px (desktop).
+
+For the metrics: `.hero-metrics` only had `flex-wrap: wrap` with no
+`justify-content`, so the three items packed against the left edge (the
+default `flex-start`) inside their now full-width row. Added
+`justify-content: center`.
+
+`assets/social-card.jpg` was left untouched this round — owner confirmed
+it already looked right, and the new hero crop is only marginally wider
+than what the card already uses, not worth the regression risk.
+
+### Follow-up 3: headline wrapping oddly, photo widening was the wrong lever
+Owner pointed out the real fix for the elbow crop should have been the
+source image margin (already fixed in Follow-up 2), not growing the
+display size — widening `.hero-photo` to 560px squeezed `.hero-content` at
+the `1024px` breakpoint enough that the h1 ("Mechanical engineer building
+hardware...") wrapped awkwardly.
+
+- `css/style.css` — `.hero-photo` reverted past Follow-up 2's bump and
+  shrunk further: 340px -> 280px (mobile/tablet), 560px -> 460px (desktop).
+  Breakpoint stayed at `1024px`, which is unrelated to the sizing and still
+  the right guard against the text/photo squeeze from Follow-up 2.
+- `.hero h1` gained its own `font-size` override (`clamp(2rem, 4.2vw,
+  3rem)`, down from the global `h1` rule's `clamp(2.2rem, 5vw, 3.5rem)`),
+  scoped to `.hero h1` specifically rather than touching the shared `h1`
+  rule, so project-page titles aren't affected.
+- No image re-crop this round — `assets/headshot-hero.jpg` from Follow-up
+  2 already cleared the elbow with margin to spare; the wrapping issue was
+  purely a CSS sizing problem.
+
+### Follow-up 4: elbow touching the border outline
+Despite clearing the elbow, the crop from Follow-up 2/3 had almost no
+background margin past it on the right (the crop's right bound sat right
+at the elbow with very little to spare), so against the photo's border it
+read as the elbow touching/crossing the outline rather than sitting
+clearly inside the frame. Owner correctly flagged this as a crop-width
+issue, not a CSS or asset-resolution one — the source photo has plenty of
+untouched resolution to work with.
+
+- `assets/headshot-hero.jpg` re-cropped (now 1200x1492): trimmed the
+  mostly-empty window-frame strip on the left (which was adding width
+  without adding anything useful) and pulled the right bound in a little.
+  Net effect: a narrower crop where the elbow now sits with clear
+  background margin before the edge on both sides, instead of being
+  flush against it — same `.hero-photo` CSS widths as Follow-up 3,
+  unchanged.
+
+## Revision 8 — 2026-06-17 — Fix iOS social-preview placeholder, add dedicated social card
+
+Owner reported the homepage link preview rendered as a placeholder icon on
+iOS. Root cause: `og:image` had no explicit width/height/type hints, which
+iOS's LinkPresentation framework needs to confirm an image is safe to render
+before it falls back to a placeholder graphic.
+
+### Added
+- `assets/headshot-lean-smile.jpg` — owner-provided headshot (4000x6000,
+  Canon EOS M50m2), checked in as the source photo for the social card and
+  future hero use.
+- `assets/social-card.jpg` (1200x630, ~50KB) — a dedicated social-preview
+  image built from the site's own design tokens (Space Grotesk / JetBrains
+  Mono, dark navy + teal palette) instead of reusing a project screenshot.
+  Right side carries a cropped, color-matched portrait from
+  `headshot-lean-smile.jpg` in a rounded, teal-bordered frame. Composed as
+  an SVG (headshot embedded as a base64 data URI after cropping/toning with
+  `sharp`) and rasterized with `sharp-cli`; the source SVG is not checked
+  into the repo. Saved as JPEG rather than PNG since it carries real photo
+  content — same visual at roughly 1/6th the file size.
+
+### Changed
+- `index.html` — `og:image` now points at `assets/social-card.jpg`; added
+  `og:image:width`, `og:image:height`, `og:image:type`, `og:url`, and
+  `twitter:card` / `twitter:title` / `twitter:description` / `twitter:image`
+  tags.
+- `projects/neurogrip.html`, `projects/stridesync.html` — kept their
+  existing project-screenshot `og:image` (so sharing a project page
+  previews that project), but added the same width/height/type/`og:url`/
+  twitter tags, which were missing on both.
+
+### Not changed
+- `assets/neurogrip/neurogrip-validation-test.png` (1.8MB) left uncompressed
+  per owner instruction — it doubles as the in-page hero/carousel image for
+  that project, and the repo is fine carrying it at full size. The new
+  width/height/type metadata should resolve the iOS placeholder issue there
+  too without re-encoding it.
+- The homepage hero section itself (`index.html` `.hero`) was not touched —
+  owner asked for the headshot on the social card only this round, not in
+  the on-page hero layout.
+
 ## Revision 7 — 2026-06-17 — Wire up real assets, add Portfolio PDF link
 
 Owner provided the real resume PDF, a new portfolio PDF, and real project

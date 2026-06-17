@@ -338,11 +338,40 @@ ul {
 
 .hero-inner {
   position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+}
+
+.hero-photo {
+  width: 280px;
+  border: 2px solid var(--accent);
+  border-radius: 12px;
+  align-self: flex-start;
+}
+
+@media (min-width: 1024px) {
+  .hero-inner {
+    flex-direction: row-reverse;
+    align-items: flex-start;
+    gap: 64px;
+  }
+
+  .hero-content {
+    flex: 1;
+    min-width: 0;
+  }
+
+  .hero-photo {
+    width: 460px;
+    flex-shrink: 0;
+  }
 }
 
 .hero h1 {
   max-width: 18ch;
   margin-bottom: 24px;
+  font-size: clamp(2rem, 4.2vw, 3rem);
 }
 
 .hero-subline {
@@ -354,13 +383,14 @@ ul {
   display: flex;
   flex-wrap: wrap;
   gap: 16px;
-  margin-bottom: 56px;
 }
 
 .hero-metrics {
   display: flex;
   flex-wrap: wrap;
+  justify-content: center;
   gap: 24px 56px;
+  margin-top: 56px;
 }
 
 /* ---------- Metric block ---------- */
