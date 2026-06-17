@@ -104,23 +104,6 @@ not listed here. No em dashes anywhere on the site.
   PDF portfolio. Paths: `/assets/stridesync/architecture.png`,
   `/assets/stridesync/breadboard.jpg`, `/assets/stridesync/dashboard.png`
 
-## PROJECT 3 — Project Inspire (Mondelez)
-- One-liner: Facility project from AutoCAD layout to construction in 2 months.
-- Card metrics: `+20% capacity` · `2 months to install`
-- Tech tags: AutoCAD, Stakeholder management, Contractor coordination
-- Detail page sections (Goal / Build / Result; no Call That Mattered, Next,
-  Repo, or Skills sections, since this is a Mondelez work project with no
-  personal repo and no `portfolio_context.md` entry to source them from):
-  - **Goal:** Take an under-scoped facility improvement from ideation to
-    implementation inside a single co-op term under live manufacturing
-    constraints.
-  - **Build:** AutoCAD layout design, contractor coordination, and
-    cross-functional stakeholder management across engineering, operations,
-    and facilities.
-  - **Result:** +20% locker capacity, +80% employee satisfaction, 40%
-    reduction in install time versus initial contractor plan.
-- Images: `/assets/inspire/layout.png` (TODO owner provides from PDF)
-
 ---
 
 ## EXPERIENCE (timeline, newest first)

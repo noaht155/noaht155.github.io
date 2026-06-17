@@ -15,8 +15,8 @@ Section order, top to bottom:
 ### 2. Projects (#projects)
 - Section label: `// PROJECTS`
 - h2: "Things I've built"
-- Grid: NeuroGrip and StrideSync as large 2-up cards (these are the
-  flagships), Project Inspire as a third full-width slimmer card beneath
+- Grid: NeuroGrip and StrideSync as large 2-up cards (the two flagships;
+  Project Inspire was removed, see changelog)
 - Card order matters: NeuroGrip first (it is the strongest evidence)
 
 ### 3. Experience (#experience)
@@ -43,34 +43,36 @@ Section order, top to bottom:
 ---
 
 ## Project detail pages (shared template)
-All three pages use the same shell; the body sections mirror the structure
-of `claude_context/portfolio_context.md` (Goal / Build / The Call That
-Mattered / Result / Next / Repo / Skills) wherever that source document has
-the data for the project:
+Both pages (NeuroGrip, StrideSync) use the same shell; the body sections
+mirror the structure of `claude_context/portfolio_context.md` (Goal / Build /
+The Call That Mattered / Result / Next / Repo / Skills):
 
 1. Nav (same as index, links point back to /index.html#section)
 2. Breadcrumb: `// PROJECTS / NEUROGRIP` style label
 3. h1 project name + one-liner
 4. Tech tag row
 5. Metric row: 2-4 metric blocks (the quantitative highlights)
-6. Hero image (full content width, 12px radius, 1px border)
+6. Image carousel: all of the project's images (hero shot plus what used to
+   be a separate gallery) live in one rotating viewport, navigated with
+   arrow buttons or the left/right arrow keys. Captions rotate with the
+   active image; a counter shows position (e.g. "2 / 3"). The border sits
+   on the image itself, height capped per breakpoint with width auto, so it
+   hugs each image's real aspect ratio instead of stretching or leaving
+   empty space. Falls back to a stacked list of all images with JS off.
 7. Sections, in this order: Goal / Build / The Call That Mattered /
    Result / Next / Repo / Skills.
-   - NeuroGrip and StrideSync use all 7 (NeuroGrip: Goal, Build, The Call
-     That Mattered, Result, Next, Repo, Skills. StrideSync uses the same
-     7, but "Progress" instead of "Result" since the build is ongoing, with
-     an "In active development" badge: accent border pill, JetBrains Mono).
-   - Project Inspire only has Goal / Build / Result: it is a Mondelez work
-     project with no personal repo and no `portfolio_context.md` entry, so
-     it has no The Call That Mattered, Next, Repo, or Skills section.
+   - NeuroGrip: Goal, Build, The Call That Mattered, Result, Next, Repo,
+     Skills.
+   - StrideSync uses the same 7, but "Progress" instead of "Result" since
+     the build is ongoing, with an "In active development" badge: accent
+     border pill, JetBrains Mono.
    - Repo section is a single link/button to the project's GitHub repo.
    - Skills section is a tag-row, matching `portfolio_context.md`'s
      "Skills - Optional Inclusion" list (this can differ slightly in
      wording from the tech tag row at the top of the page, e.g. spelling
      out "Electromyography" instead of the abbreviated "EMG" tag).
-8. Image gallery: remaining images, 2-up grid, captions in --text-2
-9. Bottom: "Next project →" link card to the next project (cycle:
-   NeuroGrip → StrideSync → Inspire → NeuroGrip)
+8. Bottom: "Next project →" link card to the next project (cycle:
+   NeuroGrip → StrideSync → NeuroGrip)
 
 ## Writing rules for any generated copy
 - No em dashes. Use commas, colons, or periods.

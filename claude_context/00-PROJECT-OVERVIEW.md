@@ -23,7 +23,6 @@ Personal portfolio site for a Mechanical Engineering student (University of Wate
 /                     index.html        — single-page scroll (hero, projects, experience, skills, contact)
 /projects/neurogrip   neurogrip.html    — project detail page
 /projects/stridesync  stridesync.html   — project detail page
-/projects/inspire     inspire.html      — project detail page (Project Inspire, Mondelez)
 ```
 - Nav links on index scroll to sections; project cards link to detail pages.
 - Every detail page has identical nav back to index sections.

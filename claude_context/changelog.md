@@ -3,6 +3,33 @@
 Revision history for the site build. Newest first. Each revision states what
 changed and any deviations from the spec files (00-04) so they stay auditable.
 
+## Revision 5 — 2026-06-17 — Remove Project Inspire
+
+Owner asked to drop Project Inspire (the Mondelez facility project) from the
+site entirely, projects grid card, detail page, and its image assets.
+
+### Removed
+- `projects/inspire.html` and `assets/inspire/` (placeholder `layout.png`
+  and `.gitkeep`).
+- The Project Inspire card in `index.html`'s projects grid.
+
+### Changed
+- `projects/stridesync.html` — "Next project" card now points back to
+  `neurogrip.html` instead of the deleted `inspire.html`, since the
+  next-project cycle is now just NeuroGrip <-> StrideSync.
+- `README.md`, `claude_context/00-PROJECT-OVERVIEW.md`,
+  `claude_context/02-CONTENT.md`, `claude_context/03-PAGES.md`,
+  `claude_context/04-DEPLOYMENT.md` — all Project Inspire references
+  removed (site structure, content spec, page-layout spec, repo tree,
+  image checklist). 03-PAGES.md's project-detail-page section also
+  updated to describe the carousel component added in Revision 4, which
+  it had not been updated to reflect at the time.
+
+### Not changed
+- The Experience timeline entry for the Mondelez co-op (`index.html`
+  `#experience`) is untouched: it describes the co-op broadly and isn't
+  branded as "Project Inspire," so it's out of scope for this removal.
+
 ## Revision 4 — 2026-06-17 — Mirror portfolio_context.md's section structure
 
 Revision 3 added "The Call That Mattered" and "Next" content but folded it

@@ -9,13 +9,12 @@ index.html              Main single-page site (hero, projects, experience, skill
 projects/
   neurogrip.html        NeuroGrip detail page
   stridesync.html       StrideSync detail page
-  inspire.html          Project Inspire detail page
 css/style.css           The one shared stylesheet (design tokens at the top)
-js/main.js              Mobile nav + scroll fade-ins (site works with JS off)
+js/main.js              Mobile nav + scroll fade-ins + image carousel (site works with JS off)
 assets/
   favicon.svg           NT monogram favicon
   Noah_Thomas_Resume.pdf   <- you provide this, keep the exact filename
-  neurogrip/  stridesync/  inspire/   <- you provide images, see below
+  neurogrip/  stridesync/   <- you provide images, see below
 404.html                Not-found page (GitHub Pages picks it up automatically)
 claude_context/         Build specs (not served as part of the site)
 ```
@@ -29,7 +28,7 @@ claude_context/         Build specs (not served as part of the site)
 
 ## Images you still need to add
 
-Labeled dark "PLACEHOLDER" images currently sit at all seven paths so the site previews cleanly. **Replace them before launch** (each one says so on its face). Note: the placeholder files at `.jpg` paths are actually PNG data, which browsers render fine, but your real exports should be genuine JPEGs.
+Labeled dark "PLACEHOLDER" images currently sit at all six paths so the site previews cleanly. **Replace them before launch** (each one says so on its face). Note: the placeholder files at `.jpg` paths are actually PNG data, which browsers render fine, but your real exports should be genuine JPEGs.
 
 Extract from your PDF portfolio, export max 1600px wide, JPEG quality ~80 (or WebP), target under 250 KB each. Use exactly these paths:
 
@@ -39,7 +38,8 @@ Extract from your PDF portfolio, export max 1600px wide, JPEG quality ~80 (or We
 - `assets/stridesync/architecture.png` — system architecture diagram
 - `assets/stridesync/breadboard.jpg` — breadboard photo
 - `assets/stridesync/dashboard.png` — dashboard screenshot
-- `assets/inspire/layout.png` — AutoCAD layout
+
+Each project page now shows these as a rotating carousel (arrows / left-right keys) rather than a static hero plus gallery grid, so feel free to drop in more than one extra image per project, just follow the existing `<figure class="carousel-figure">` pattern in the HTML.
 
 ## Deploying to GitHub Pages (first time)
 

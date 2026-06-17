@@ -6,13 +6,12 @@ noah-portfolio/
 ├── index.html
 ├── projects/
 │   ├── neurogrip.html
-│   ├── stridesync.html
-│   └── inspire.html
+│   └── stridesync.html
 ├── css/style.css
 ├── js/main.js
 ├── assets/
 │   ├── Noah_Thomas_Resume.pdf        (owner provides)
-│   ├── neurogrip/  stridesync/  inspire/   (images, owner provides from PDF portfolio)
+│   ├── neurogrip/  stridesync/   (images, owner provides from PDF portfolio)
 │   └── favicon.svg                   (generate: "NT" monogram, teal on dark)
 └── README.md                          (how to edit content + deploy)
 ```
