@@ -644,13 +644,6 @@ ul {
   }
 }
 
-.detail-hero-image {
-  width: 100%;
-  border: 1px solid var(--border);
-  border-radius: 12px;
-  margin-bottom: var(--section-gap);
-}
-
 .detail-section h2 {
   margin-bottom: 16px;
 }
@@ -659,30 +652,106 @@ ul {
   margin-bottom: 16px;
 }
 
-.gallery {
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: 24px;
+/* ---------- Image carousel ---------- */
+.carousel {
+  position: relative;
+  margin-bottom: var(--section-gap);
+}
+
+.carousel-viewport {
+  position: relative;
+  text-align: center;
+}
+
+.js .carousel-figure {
+  display: none;
+}
+
+.js .carousel-figure.is-active {
+  display: block;
+}
+
+.carousel-image {
+  max-height: 320px;
+  max-width: 100%;
+  width: auto;
+  height: auto;
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  margin: 0 auto;
 }
 
 @media (min-width: 768px) {
-  .gallery {
-    grid-template-columns: 1fr 1fr;
+  .carousel-image {
+    max-height: 480px;
   }
 }
 
-.gallery figure img {
-  width: 100%;
-  aspect-ratio: 4 / 3;
-  object-fit: cover;
-  border: 1px solid var(--border);
-  border-radius: 12px;
-}
-
-.gallery figcaption {
+.carousel-figure figcaption {
   color: var(--text-2);
   font-size: 0.85rem;
-  margin-top: 8px;
+  margin-top: 12px;
+}
+
+.carousel-arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 40px;
+  height: 40px;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  background: var(--bg-1);
+  border: 1px solid var(--border);
+  border-radius: 50%;
+  color: var(--text-0);
+  font-family: var(--font-mono);
+  font-size: 1.1rem;
+  line-height: 1;
+  cursor: pointer;
+  z-index: 2;
+  transition: border-color 150ms ease, color 150ms ease;
+}
+
+.js .carousel-arrow {
+  display: flex;
+}
+
+.carousel.is-single .carousel-arrow,
+.carousel.is-single .carousel-counter {
+  display: none;
+}
+
+.carousel-arrow:hover {
+  border-color: var(--accent-dim);
+  color: var(--accent);
+}
+
+.carousel-arrow:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+}
+
+.carousel-arrow-prev {
+  left: 8px;
+}
+
+.carousel-arrow-next {
+  right: 8px;
+}
+
+.carousel-counter {
+  display: none;
+  font-family: var(--font-mono);
+  font-size: 0.8rem;
+  color: var(--text-2);
+  text-align: center;
+  margin-top: 12px;
+}
+
+.js .carousel-counter {
+  display: block;
 }
 
 .next-project {

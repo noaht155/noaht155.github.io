@@ -32,6 +32,58 @@ if (navToggle && navLinks) {
   });
 }
 
+// ---------- Image carousel ----------
+// Hero image and gallery share one rotating viewport per project page.
+// Arrow keys are global since each page has at most one carousel.
+var carousels = document.querySelectorAll("[data-carousel]");
+
+carousels.forEach(function (carousel) {
+  var figures = Array.prototype.slice.call(
+    carousel.querySelectorAll(".carousel-figure")
+  );
+  var counter = carousel.querySelector(".carousel-counter");
+  var prevBtn = carousel.querySelector(".carousel-arrow-prev");
+  var nextBtn = carousel.querySelector(".carousel-arrow-next");
+  var index = 0;
+
+  if (figures.length <= 1) {
+    carousel.classList.add("is-single");
+    return;
+  }
+
+  function show(i) {
+    index = (i + figures.length) % figures.length;
+    figures.forEach(function (figure, j) {
+      figure.classList.toggle("is-active", j === index);
+    });
+    if (counter) {
+      counter.textContent = (index + 1) + " / " + figures.length;
+    }
+  }
+
+  if (prevBtn) {
+    prevBtn.addEventListener("click", function () {
+      show(index - 1);
+    });
+  }
+
+  if (nextBtn) {
+    nextBtn.addEventListener("click", function () {
+      show(index + 1);
+    });
+  }
+
+  document.addEventListener("keydown", function (event) {
+    if (event.key === "ArrowLeft") {
+      show(index - 1);
+    } else if (event.key === "ArrowRight") {
+      show(index + 1);
+    }
+  });
+
+  show(0);
+});
+
 // ---------- Scroll reveal ----------
 var revealEls = document.querySelectorAll(".reveal");
 var reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)");

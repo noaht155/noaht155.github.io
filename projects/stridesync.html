@@ -68,7 +68,29 @@
         </div>
       </div>
 
-      <img class="detail-hero-image" src="../assets/stridesync/architecture.png" alt="StrideSync system architecture diagram: bilateral IMU and FSR sensor nodes feeding two ESP32 modules and a Python pipeline" width="1600" height="900">
+      <div class="carousel" data-carousel>
+        <div class="carousel-viewport">
+          <button class="carousel-arrow carousel-arrow-prev" type="button" aria-label="Previous image">&larr;</button>
+
+          <figure class="carousel-figure is-active">
+            <img class="carousel-image" src="../assets/stridesync/architecture.png" alt="StrideSync system architecture diagram: bilateral IMU and FSR sensor nodes feeding two ESP32 modules and a Python pipeline" width="1600" height="900" loading="eager">
+            <figcaption>System architecture: bilateral IMU and FSR sensor nodes feeding two ESP32 modules.</figcaption>
+          </figure>
+
+          <figure class="carousel-figure">
+            <img class="carousel-image" src="../assets/stridesync/breadboard.jpg" alt="StrideSync breadboard prototype with ESP32, IMUs, and multiplexer wiring" width="1200" height="900" loading="lazy">
+            <figcaption>Breadboard prototype: ESP32, MPU-6050 IMUs, TCA9548A multiplexer.</figcaption>
+          </figure>
+
+          <figure class="carousel-figure">
+            <img class="carousel-image" src="../assets/stridesync/dashboard.png" alt="Plotly Dash post-run dashboard showing gait metrics" width="1200" height="900" loading="lazy">
+            <figcaption>Post-run Plotly Dash dashboard built on the Python pipeline.</figcaption>
+          </figure>
+
+          <button class="carousel-arrow carousel-arrow-next" type="button" aria-label="Next image">&rarr;</button>
+        </div>
+        <p class="carousel-counter">1 / 3</p>
+      </div>
     </div>
 
     <section class="container detail-section section reveal" style="padding-top: 0;">
@@ -121,19 +143,6 @@
         <span class="tag">Soldering</span>
         <span class="tag">SolidWorks</span>
         <span class="tag">3MF</span>
-      </div>
-    </section>
-
-    <section class="container section reveal">
-      <div class="gallery">
-        <figure>
-          <img src="../assets/stridesync/breadboard.jpg" alt="StrideSync breadboard prototype with ESP32, IMUs, and multiplexer wiring" width="1200" height="900" loading="lazy">
-          <figcaption>Breadboard prototype: ESP32, MPU-6050 IMUs, TCA9548A multiplexer.</figcaption>
-        </figure>
-        <figure>
-          <img src="../assets/stridesync/dashboard.png" alt="Plotly Dash post-run dashboard showing gait metrics" width="1200" height="900" loading="lazy">
-          <figcaption>Post-run Plotly Dash dashboard built on the Python pipeline.</figcaption>
-        </figure>
       </div>
     </section>
 
