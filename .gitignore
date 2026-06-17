@@ -1,0 +1,4 @@
+# Contains personal info (phone number) and isn't meant to sync to the
+# public repo via .github/workflows/sync-to-public.yml.
+claude_context/portfolio_context.md
+claude_context/portfolio_context.md:Zone.Identifier
