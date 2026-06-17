@@ -70,14 +70,14 @@
     </div>
 
     <section class="container detail-section section reveal" style="padding-top: 0;">
-      <p class="section-label">// GOALS</p>
-      <h2>Goals</h2>
+      <p class="section-label">// GOAL</p>
+      <h2>Goal</h2>
       <p>Model and fabricate a 3D printed hand with individual finger movement, controlled non-invasively via surface EMG, proving feasibility of low-cost neurological prosthetic control.</p>
     </section>
 
     <section class="container detail-section section reveal">
-      <p class="section-label">// METHODS</p>
-      <h2>Methods</h2>
+      <p class="section-label">// BUILD</p>
+      <h2>Build</h2>
       <p>SolidWorks design with DFM principles: press-fit filament joints, zero hardware fasteners. Each finger is driven by one continuous-rotation MG90D servo through an antagonistic dual nylon tendon drive, so one rotation direction flexes the finger and the other extends it, with zero return springs. Servos are powered and commanded through a PWM driver board.</p>
       <p>An EMG module detects muscular voltage and passes it through a noise-rejection algorithm running on an Arduino UNO R3. A rolling average paired with a threshold value determines whether the muscle is contracted or relaxed, and the classification output drives the PWM board.</p>
     </section>
@@ -91,8 +91,8 @@
     </section>
 
     <section class="container detail-section section reveal">
-      <p class="section-label">// RESULTS</p>
-      <h2>Results</h2>
+      <p class="section-label">// RESULT</p>
+      <h2>Result</h2>
       <p>Zero misclassifications across 30 trials, with a successful trial defined as the hand clenching when the muscle contracts and releasing when it relaxes. The hand assembly went together without any hardware: every joint is press-fit with filament. The dual tendon design enhances grip capability.</p>
     </section>
 
@@ -100,6 +100,26 @@
       <p class="section-label">// NEXT</p>
       <h2>Next</h2>
       <p>Implement wrist actuation and lateral finger actuation. Replace the Arduino UNO R3, EMG module, and PWM driver with a custom PCB so the electronics fit inside the arm enclosure. Add current sensing to prevent servo burnout under stall, or move to stepper motors.</p>
+    </section>
+
+    <section class="container detail-section section reveal">
+      <p class="section-label">// REPO</p>
+      <h2>Repo</h2>
+      <p><a class="btn btn-secondary" href="https://github.com/noaht155/project_neurogrip">View project repo &rarr;</a></p>
+    </section>
+
+    <section class="container detail-section section reveal">
+      <p class="section-label">// SKILLS</p>
+      <h2>Skills</h2>
+      <div class="tag-row">
+        <span class="tag">SolidWorks</span>
+        <span class="tag">C++</span>
+        <span class="tag">Arduino</span>
+        <span class="tag">Electromyography</span>
+        <span class="tag">Bambu Studio</span>
+        <span class="tag">3MF</span>
+        <span class="tag">DFM</span>
+      </div>
     </section>
 
     <section class="container section reveal">

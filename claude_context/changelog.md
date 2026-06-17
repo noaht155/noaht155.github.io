@@ -3,6 +3,36 @@
 Revision history for the site build. Newest first. Each revision states what
 changed and any deviations from the spec files (00-04) so they stay auditable.
 
+## Revision 4 — 2026-06-17 — Mirror portfolio_context.md's section structure
+
+Revision 3 added "The Call That Mattered" and "Next" content but folded it
+into the existing Goals/Methods/Results naming instead of actually mirroring
+`portfolio_context.md`'s own section structure: Goal, Build, The Call That
+Mattered, Result (or Progress), Next, Repo, Skills. This revision fixes that.
+
+### Changed
+- `projects/neurogrip.html` — renamed "Goals" -> "Goal", "Methods" -> "Build",
+  "Results" -> "Result" (section labels and h2s). Added a "Repo" section
+  (link to https://github.com/noaht155/project_neurogrip) and a "Skills"
+  section (SolidWorks, C++, Arduino, Electromyography, Bambu Studio, 3MF,
+  DFM), both new, placed after "Next" and before the image gallery.
+- `projects/stridesync.html` — same Goal/Build rename; "Status" renamed to
+  "Progress" to match the source doc's exact header for this project (it
+  uses "Result" for NeuroGrip but "Progress" for StrideSync, since the
+  build is still ongoing). Added "Repo"
+  (https://github.com/noaht155/project_stridesync) and "Skills" (C++,
+  PlatformIO, GitHub, Python, ESP32, Soldering, SolidWorks, 3MF) sections.
+- `projects/inspire.html` — renamed "Goals" -> "Goal", "Methods" -> "Build",
+  "Results" -> "Result" for consistency. No Repo or Skills section added:
+  Inspire is a Mondelez work project with no personal repo and no entry in
+  `portfolio_context.md`, so there is no source data for those sections.
+- `claude_context/02-CONTENT.md`, `03-PAGES.md` — rewritten to document the
+  7-section structure (Goal / Build / The Call That Mattered / Result-or-
+  Progress / Next / Repo / Skills) and Inspire's 3-section exception.
+
+### Not touched
+- No image or asset files were modified.
+
 ## Revision 3 — 2026-06-17 — Project copy refresh from portfolio_context.md
 
 Owner supplied `claude_context/portfolio_context.md`, a richer source of

@@ -43,7 +43,10 @@ Section order, top to bottom:
 ---
 
 ## Project detail pages (shared template)
-All three pages use the same structure:
+All three pages use the same shell; the body sections mirror the structure
+of `claude_context/portfolio_context.md` (Goal / Build / The Call That
+Mattered / Result / Next / Repo / Skills) wherever that source document has
+the data for the project:
 
 1. Nav (same as index, links point back to /index.html#section)
 2. Breadcrumb: `// PROJECTS / NEUROGRIP` style label
@@ -51,9 +54,20 @@ All three pages use the same structure:
 4. Tech tag row
 5. Metric row: 2-4 metric blocks (the quantitative highlights)
 6. Hero image (full content width, 12px radius, 1px border)
-7. Sections: Goals / Methods / The Call That Mattered / Results / Next
-   (StrideSync uses Goals / Methods / The Call That Mattered / Status / Next,
-   with an "In active development" badge: accent border pill, JetBrains Mono)
+7. Sections, in this order: Goal / Build / The Call That Mattered /
+   Result / Next / Repo / Skills.
+   - NeuroGrip and StrideSync use all 7 (NeuroGrip: Goal, Build, The Call
+     That Mattered, Result, Next, Repo, Skills. StrideSync uses the same
+     7, but "Progress" instead of "Result" since the build is ongoing, with
+     an "In active development" badge: accent border pill, JetBrains Mono).
+   - Project Inspire only has Goal / Build / Result: it is a Mondelez work
+     project with no personal repo and no `portfolio_context.md` entry, so
+     it has no The Call That Mattered, Next, Repo, or Skills section.
+   - Repo section is a single link/button to the project's GitHub repo.
+   - Skills section is a tag-row, matching `portfolio_context.md`'s
+     "Skills - Optional Inclusion" list (this can differ slightly in
+     wording from the tech tag row at the top of the page, e.g. spelling
+     out "Electromyography" instead of the abbreviated "EMG" tag).
 8. Image gallery: remaining images, 2-up grid, captions in --text-2
 9. Bottom: "Next project →" link card to the next project (cycle:
    NeuroGrip → StrideSync → Inspire → NeuroGrip)
